@@ -349,17 +349,17 @@ NEAR_DEATH_EXPERIENCE
 ## Set to 1 for "custom", silicons will start with the custom laws defined in silicon_laws.txt. (If silicon_laws.txt is empty, the AI will spawn with asimov and Custom boards will auto-delete.)
 ## Set to 2 for "random", silicons will start with a random lawset picked from random laws specified below.
 ## Set to 3 for "weighted random", using values in "silicon_weights.txt", a law will be selected, with weights specifed in that file.
-DEFAULT_LAWS 0
+DEFAULT_LAWS 2
 
-## RANDOM LAWS ##
+# RANDOM LAWS ##
 ## ------------------------------------------------------------------------------------------
 ## These control what laws are available for selection if random silicon laws are active.
 ## See datums\ai_laws.dm for the full law lists
 
 ## standard-ish laws. These are fairly ok to run
 RANDOM_LAWS asimov
-RANDOM_LAWS asimovpp
-RANDOM_LAWS paladin
+#RANDOM_LAWS asimovpp
+#RANDOM_LAWS paladin
 RANDOM_LAWS robocop
 RANDOM_LAWS corporate
 
@@ -367,7 +367,7 @@ RANDOM_LAWS corporate
 #RANDOM_LAWS hippocratic
 #RANDOM_LAWS maintain
 #RANDOM_LAWS drone
-#RANDOM_LAWS liveandletlive
+RANDOM_LAWS liveandletlive
 #RANDOM_LAWS peacekeeper
 #RANDOM_LAWS reporter
 #RANDOM_LAWS hulkamania
@@ -380,7 +380,7 @@ RANDOM_LAWS corporate
 #RANDOM_LAWS ratvar
 
 ## meme laws. Honk
-#RANDOM_LAWS buildawall
+RANDOM_LAWS buildawall
 
 ## If weighted laws are selected (DEFAULT_LAWS = 3),
 ## then an AI's starting laws will be determined by the weights of these values
@@ -392,9 +392,9 @@ LAW_WEIGHT custom,0
 ## standard-ish laws. These are fairly ok to run
 LAW_WEIGHT asimov,32
 LAW_WEIGHT asimovpp,12
-LAW_WEIGHT paladin,12
-LAW_WEIGHT robocop,12
-LAW_WEIGHT corporate,12
+LAW_WEIGHT paladin,8
+LAW_WEIGHT robocop,8
+LAW_WEIGHT corporate,8
 
 ## Quirky laws. Shouldn't cause too much harm
 LAW_WEIGHT hippocratic,3
@@ -411,7 +411,7 @@ LAW_WEIGHT ninja,0
 LAW_WEIGHT antimov,0
 LAW_WEIGHT thermodynamic,0
 LAW_WEIGHT ratvar,0
-LAW_WEIGHT buildawall,0
+LAW_WEIGHT buildawall,5
 
 ##------------------------------------------------
 
@@ -439,8 +439,9 @@ ROUNDSTART_RACES human
 ## Races that are strictly worse than humans that could probably be turned on without balance concerns
 ROUNDSTART_RACES lizard
 #ROUNDSTART_RACES fly
-#ROUNDSTART_RACES moth
+ROUNDSTART_RACES moth
 ROUNDSTART_RACES plasmaman
+ROUNDSTART_RACES felind
 #ROUNDSTART_RACES shadow
 
 ## Races that are better than humans in some ways, but worse in others
@@ -481,7 +482,7 @@ OVERFLOW_CAP -1
 
 ## Starlight for exterior walls and breaches. Uncomment for starlight!
 ## This is disabled by default to make testing quicker, should be enabled on production servers or testing servers messing with lighting
-#STARLIGHT
+STARLIGHT
 
 ## Uncomment to bring back old grey suit assistants instead of the now default rainbow colored assistants.
 #GREY_ASSISTANTS
@@ -524,10 +525,10 @@ BOMBCAP 20
 ## a less lootfilled or smaller or less round effecting ruin costs less to
 ## spawn, while the converse is true. Alter this number to affect the amount
 ## of ruins.
-LAVALAND_BUDGET 60
+LAVALAND_BUDGET 90
 
 ## Space Ruin Budged
-Space_Budget 16
+Space_Budget 30
 
 ## Time in ds from when a player latejoins till the arrival shuttle docks at the station
 ## Must be at least 30. At least 55 recommended to be visually/aurally appropriate
@@ -557,7 +558,7 @@ ROUNDSTART_TRAITS
 #DISABLE_HUMAN_MOOD
 
 ## Enable night shifts ##
-#ENABLE_NIGHT_SHIFTS
+ENABLE_NIGHT_SHIFTS
 
 ## Enable randomized shift start times##
 #RANDOMIZE_SHIFT_TIME
